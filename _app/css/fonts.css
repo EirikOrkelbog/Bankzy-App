@@ -1,16 +1,23 @@
-@import url('');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 
 @font-face {
-	font-family: "";
-	src: url("");
+	font-family: "Poppins", sans-serif;
+	src: url("/_app/assets/fonts/Poppins-Medium.ttf");
 	font-weight: 400;
+	font-style: medium;
+}
+
+@font-face {
+	font-family: "Poppins", sans-serif;
+	src: url("/_app/assets/fonts/Poppins-Regular.ttf");
+	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "";
-	src: url("");
-	font-weight: 700;
+	font-family: "Poppins", sans-serif;
+	src: url("/_app/assets/fonts/Poppins-SemiBold.ttf");
+	font-weight: 600;
 	font-style: bold;
 }
