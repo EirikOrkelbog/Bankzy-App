@@ -8,4 +8,15 @@ body {
     background-color: #f3f3f3;
     height: 100vh;
     padding: 2rem;
+}
+
+.app {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: auto repeat(3, 15rem) auto;
+    gap: 2rem;
+    max-width: 100rem;
+    margin: 4rem auto;
+    transition: all 1s;
   }
