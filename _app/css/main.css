@@ -3,3 +3,8 @@
 @import '/_app/css/base.css';
 
 @import '/_app/css/modules/login.css';
+@import '/_app/css/modules/balance.css';
+@import '/_app/css/modules/movements.css';
+@import '/_app/css/modules/operations.css';
+@import '/_app/css/modules/summary.css';
+@import '/_app/css/modules/timer.css';
