@@ -29,6 +29,9 @@ export default function () {
 		pin: 4444,
 	};
 
+	const accounts = [account1, account2, account3, account4];
+
+	// Function for updating transaction movements
 	const displayMovements = function (movements) {
 		containerMovements.innerHTML = '';
 
@@ -46,4 +49,16 @@ export default function () {
 		});
 	};
 	displayMovements(account1.movements);
+
+	// Function for creating usernames
+	const createUsernames = function (accounts) {
+		accounts.forEach(function (account) {
+			account.username = account.owner
+			.toLowerCase()
+			.split(' ')
+			.map(name => name[0])
+			.join('');
+		});
+	};
+	createUsernames(accounts);
 }
