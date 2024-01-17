@@ -1,3 +1,5 @@
-import accounts from "./modules/accounts.js";
+import transactions from "./modules/transactions.js";
+import usernames from "./modules/usernames.js";
 
-accounts();
+transactions();
+usernames();
