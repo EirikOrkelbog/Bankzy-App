@@ -1,6 +1,7 @@
 import { accounts } from "./data.js";
 export default function transactions() {
 	const containerMovements = document.querySelector('.movements');
+	const labelBalance = document.querySelector('.balance__value');
 
 	// Function for updating transaction movements
 	const displayMovements = function (movements) {
@@ -18,4 +19,11 @@ export default function transactions() {
 		});
 	};
 	displayMovements(accounts[0].movements);
+
+	// Function for calculating balance based on transactions
+	const calculateBalance = function (movements) {
+		const balance = movements.reduce((accumulator, movement) => accumulator + movement, 0);
+		labelBalance.textContent = `${balance}$`;
+	}
+	calculateBalance(accounts[0].movements);
 }
