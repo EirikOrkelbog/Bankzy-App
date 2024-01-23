@@ -18,5 +18,6 @@ body {
     gap: 2rem;
     max-width: 100rem;
     margin: 4rem auto;
+    opacity: 0;
     transition: all 1s;
   }
