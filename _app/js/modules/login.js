@@ -1,7 +1,14 @@
 import { accounts } from "./data.js";
+import { setCurrentAccount } from './state.js';
 import displayMovements from "./movements.js";
 import calculateBalance from "./balance.js";
 import calculateSummary from "./summary.js";
+
+export const updateUI = function (acc) {
+	displayMovements(acc.movements);
+	calculateBalance(acc);
+	calculateSummary(acc);
+}
 
 export default function login() {
 	const btnLogin = document.querySelector('.login__button');
@@ -15,20 +22,16 @@ export default function login() {
 	btnLogin.addEventListener('click', function (event) {
 		event.preventDefault();
 		currentAccount = accounts.find(account => account.username === inputLoginUsername.value);
+		
 		if (currentAccount?.pin === Number(inputLoginPin.value)) {
+			setCurrentAccount(currentAccount);
 			// Display UI and welcome message
 			labelWelcome.textContent = `Welcome back ${currentAccount.owner.split(' ')[0]}`;
 			containerApp.style.opacity = 100;
 			// Clear input fields
 			inputLoginUsername.value = inputLoginPin.value = '';
 			inputLoginPin.blur();
-			// Display movements
-			displayMovements(currentAccount.movements);
-			// Display balance
-			calculateBalance(currentAccount.movements);
-			// Display summary
-			calculateSummary(currentAccount);
+			updateUI(currentAccount);
 		}
 	});
-
 };
