@@ -1,5 +1,5 @@
 import { accounts } from "./data.js";
-import { getCurrentAccount, setCurrentAccount } from './state.js';
+import { getCurrentAccount } from './state.js';
 
 const closeButton = document.querySelector('.form__button--close');
 const closeUser = document.querySelector('.form__input--user');
