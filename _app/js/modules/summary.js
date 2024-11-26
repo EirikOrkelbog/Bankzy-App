@@ -7,8 +7,8 @@ const calculateSummary = function (account) {
 	const deposits = account.movements.filter(movement => movement > 0).reduce((accumulator, current) => accumulator + current, 0);
 	const withdrawals = account.movements.filter(movement => movement < 0).reduce((accumulator, current) => accumulator + current, 0);
 	const interest = account.movements.filter((movement) => movement > 0).map(deposit => (deposit * account.interestRate) / 100).reduce((accumulator, interest) => accumulator + interest, 0);
-	labelSumIn.textContent = `${deposits}$`;
-	labelSumOut.textContent = `${Math.abs(withdrawals)}$`;
-	labelSumInterest.textContent = `${interest}$`;
+	labelSumIn.textContent = `${deposits.toFixed(2)}$`;
+	labelSumOut.textContent = `${Math.abs(withdrawals).toFixed(2)}$`;
+	labelSumInterest.textContent = `${interest.toFixed(2)}$`;
 };
 export default calculateSummary;
